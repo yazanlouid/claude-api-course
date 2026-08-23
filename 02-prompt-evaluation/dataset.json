@@ -1,0 +1,50 @@
+[
+  {
+    "prompt_inputs": {
+      "height": "180 cm",
+      "weight": "85 kg",
+      "goal": "Maximize muscle recovery and strength performance with optimized protein timing around weightlifting training",
+      "restrictions": "No shellfish or tree nuts due to allergies"
+    },
+    "solution_criteria": [
+      "Meal plan covers a full 24-hour day with 4-5 meals",
+      "Minimum 2.0g protein per kg bodyweight (170g total) distributed across meals with emphasis pre/post-workout",
+      "Includes specific meal timing recommendations around training session",
+      "Respects all dietary restrictions (no shellfish or tree nuts)"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a strength/power athlete (weightlifter) needing protein-focused meals with strategic nutrient timing for muscle recovery and performance"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178 cm",
+      "weight": "72 kg",
+      "goal": "Optimize energy and recovery for early morning swimming training (5:30 AM session, 90 minutes) with afternoon practice",
+      "restrictions": "No shellfish, prefers quick-prep meals due to limited time before training"
+    },
+    "solution_criteria": [
+      "Meal plan spans one full day with at least 4 eating occasions strategically timed around swimming sessions",
+      "Pre-dawn meal (before 5:30 AM training) is light and easily digestible; post-training meal includes protein and carbs for recovery",
+      "All meals and snacks require minimal preparation time (under 15 minutes each) and avoid shellfish",
+      "Caloric intake and macronutrient distribution are appropriate for a 72 kg swimmer with dual training sessions"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a sport-specific constraint scenario (swimmer with early morning training) requiring practical meal timing that accommodates pool sessions and limited preparation time"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178 cm",
+      "weight": "68 kg",
+      "goal": "Prepare for marathon race in 2 weeks with optimal energy and recovery",
+      "restrictions": "Vegetarian, no dairy"
+    },
+    "solution_criteria": [
+      "Meal plan spans exactly 1 day with breakfast, lunch, dinner, and strategic pre/post-workout snacks",
+      "Provides approximately 3,200-3,500 calories with carbohydrates comprising 60-65% of total intake",
+      "Includes timing recommendations around training (e.g., pre-workout and post-workout meals)",
+      "All meals and snacks align with vegetarian and dairy-free restrictions"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a high-endurance athlete (marathon runner) requiring calorie-dense, carbohydrate-rich meals with specific timing around training windows"
+  }
+]

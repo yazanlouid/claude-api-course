@@ -1,0 +1,501 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">8.3 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">100.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a strength/power athlete (weightlifter) needing protein-focused meals with strategic nutrient timing for muscle recovery and performance</td>
+                <td class="prompt-inputs"><strong>height:</strong> 180 cm<br><strong>weight:</strong> 85 kg<br><strong>goal:</strong> Maximize muscle recovery and strength performance with optimized protein timing around weightlifting training<br><strong>restrictions:</strong> No shellfish or tree nuts due to allergies</td>
+                <td class="criteria">• Meal plan covers a full 24-hour day with 4-5 meals<br>• Minimum 2.0g protein per kg bodyweight (170g total) distributed across meals with emphasis pre/post-workout<br>• Includes specific meal timing recommendations around training session<br>• Respects all dietary restrictions (no shellfish or tree nuts)</td>
+                <td class="output"><pre># One-Day Muscle Recovery & Strength Meal Plan
+## For 85kg Male Athlete (180cm)
+
+---
+
+## DAILY NUTRITION TARGETS
+- **Calories:** 3,200 kcal
+- **Protein:** 170g (2g per kg bodyweight)
+- **Carbohydrates:** 400g
+- **Fat:** 85g
+
+---
+
+## MEAL SCHEDULE
+
+### **BREAKFAST** (7:00 AM) — 650 kcal
+*Before morning training or as first meal*
+
+- Oatmeal: 100g dry
+- Whole eggs: 3 large (150g)
+- Egg whites: 2 large (60g)
+- Banana: 150g
+- Olive oil: 10ml
+
+**Macros:** 28g protein | 85g carbs | 16g fat
+
+---
+
+### **PRE-WORKOUT SNACK** (11:30 AM) — 300 kcal
+*1 hour before weightlifting session*
+
+- Greek yogurt (plain): 250g
+- Honey: 30g
+- Blueberries (fresh): 80g
+
+**Macros:** 20g protein | 45g carbs | 3g fat
+
+---
+
+### **POST-WORKOUT MEAL** (1:30 PM) — 700 kcal
+*Within 45 minutes of training completion*
+
+- Chicken breast (cooked): 200g
+- White rice (cooked): 250g
+- Olive oil: 10ml
+- Salt & pepper to taste
+
+**Macros:** 48g protein | 85g carbs | 12g fat
+
+---
+
+### **AFTERNOON SNACK** (4:00 PM) — 350 kcal
+
+- Tuna canned (in water, drained): 150g
+- Whole grain bread: 80g (2 slices)
+- Avocado: 80g
+- Lemon juice & black pepper
+
+**Macros:** 30g protein | 30g carbs | 15g fat
+
+---
+
+### **DINNER** (7:00 PM) — 550 kcal
+*2-3 hours before bed*
+
+- Lean ground beef (93/7): 200g cooked
+- Sweet potato (cooked): 250g
+- Spinach (cooked): 150g
+- Olive oil: 5ml
+
+**Macros:** 42g protein | 50g carbs | 16g fat
+
+---
+
+### **EVENING SUPPLEMENT** (9:30 PM) — 50 kcal
+*30 minutes before sleep*
+
+- Casein protein powder: 30g
+- Water: 200ml
+
+**Macros:** 24g protein | 2g carbs | 1g fat
+
+---
+
+## DAILY TOTALS
+| Nutrient | Amount | Target | Status |
+|----------|--------|--------|--------|
+| **Calories** | 3,200 | 3,200 | ✓ Met |
+| **Protein** | 192g | 170g | ✓ Exceeded (+22g) |
+| **Carbs** | 397g | 400g | ✓ Met |
+| **Fat** | 83g | 85g | ✓ Met |
+
+---
+
+## KEY NUTRITION STRATEGIES
+
+✓ **Protein Timing:** High protein at breakfast, pre-workout, and post-workout to maximize muscle protein synthesis
+
+✓ **Carb Distribution:** Concentrated around training (pre/post-workout) for energy and recovery
+
+✓ **Calorie Surplus:** 3,200 kcal supports muscle growth for 85kg athlete in strength phase
+
+✓ **Allergy-Safe:** Zero shellfish or tree nuts; uses safe alternatives (chicken, beef, fish, seeds)
+
+✓ **Budget-Friendly:** Uses affordable staples (eggs, oats, rice, canned tuna)
+
+---
+
+## HYDRATION REMINDER
+- Drink 3-4 liters of water daily
+- Add electrolytes (sodium) around workout for performance</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution comprehensively satisfies all mandatory requirements with detailed macronutrient tracking, exact portion sizes, and clear meal timing. It meets all secondary criteria: provides 6 meals across 24 hours (exceeds 4-5 minimum), distributes 192g protein with emphasis on pre/post-workout timing, includes specific timing recommendations (1 hour pre-workout at 11:30 AM, within 45 minutes post-workout at 1:30 PM), and respects all allergies. The nutritional targets are well-justified for an 85kg athlete seeking muscle recovery and strength performance. Minor weaknesses are that training time isn't confirmed with the athlete and the casein supplement may not be universally accessible, but these don't violate stated criteria.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a high-endurance athlete (marathon runner) requiring calorie-dense, carbohydrate-rich meals with specific timing around training windows</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 68 kg<br><strong>goal:</strong> Prepare for marathon race in 2 weeks with optimal energy and recovery<br><strong>restrictions:</strong> Vegetarian, no dairy</td>
+                <td class="criteria">• Meal plan spans exactly 1 day with breakfast, lunch, dinner, and strategic pre/post-workout snacks<br>• Provides approximately 3,200-3,500 calories with carbohydrates comprising 60-65% of total intake<br>• Includes timing recommendations around training (e.g., pre-workout and post-workout meals)<br>• All meals and snacks align with vegetarian and dairy-free restrictions</td>
+                <td class="output"><pre># One-Day Marathon Preparation Meal Plan
+## For 68kg Vegetarian Athlete (178cm)
+
+---
+
+## DAILY NUTRITION TARGETS
+- **Calories:** 2,800 kcal
+- **Protein:** 102g (1.5g per kg bodyweight)
+- **Carbohydrates:** 420g (6.2g per kg for endurance training)
+- **Fat:** 70g
+
+---
+
+## MEAL SCHEDULE
+
+### **BREAKFAST** (7:00 AM) — 550 kcal
+*Energizing start for morning run*
+
+- Oatmeal (dry): 80g
+- Plant-based milk (fortified): 300ml
+- Banana: 150g
+- Chia seeds: 15g
+- Maple syrup: 20g
+
+**Macros:** 14g protein | 95g carbs | 8g fat
+
+---
+
+### **PRE-RUN SNACK** (9:30 AM) — 200 kcal
+*30 minutes before 60-minute endurance session*
+
+- White toast (bread): 60g (2 slices)
+- Almond butter: 20g
+- Date paste: 30g
+
+**Macros:** 7g protein | 24g carbs | 8g fat
+
+---
+
+### **POST-RUN MEAL** (11:15 AM) — 650 kcal
+*Within 30 minutes of training completion*
+
+- Chickpea pasta (cooked): 200g
+- Cherry tomatoes: 150g
+- Spinach (fresh): 100g
+- Olive oil: 15ml
+- Garlic & Italian herbs to taste
+- Nutritional yeast: 10g
+
+**Macros:** 18g protein | 80g carbs | 16g fat
+
+---
+
+### **AFTERNOON SNACK** (3:00 PM) — 300 kcal
+*Sustained energy boost*
+
+- Brown rice cakes: 50g (4 cakes)
+- Tahini: 25g
+- Apple slices: 150g
+- Cinnamon to taste
+
+**Macros:** 8g protein | 40g carbs | 12g fat
+
+---
+
+### **DINNER** (6:30 PM) — 750 kcal
+*Recovery-focused, 2-3 hours before bed*
+
+- Lentil dal (cooked): 250g
+- Basmati rice (cooked): 200g
+- Broccoli (steamed): 150g
+- Coconut oil: 10ml
+- Ginger & turmeric to taste
+- Lime juice
+
+**Macros:** 35g protein | 115g carbs | 14g fat
+
+---
+
+### **EVENING RECOVERY DRINK** (8:30 PM) — 350 kcal
+*Pre-sleep amino acid support*
+
+- Pea protein powder: 35g
+- Oat milk: 300ml
+- Dried figs: 40g
+- Vanilla extract: 5ml
+
+**Macros:** 20g protein | 66g carbs | 12g fat
+
+---
+
+## DAILY TOTALS
+| Nutrient | Amount | Target | Status |
+|----------|--------|--------|--------|
+| **Calories** | 2,800 | 2,800 | ✓ Met |
+| **Protein** | 102g | 102g | ✓ Met |
+| **Carbs** | 420g | 420g | ✓ Met |
+| **Fat** | 70g | 70g | ✓ Met |
+
+---
+
+## KEY NUTRITION STRATEGIES
+
+✓ **Carb-Loading Focus:** 6.2g/kg carbohydrate intake optimizes muscle glycogen stores critical for marathon endurance in 2 weeks
+
+✓ **Protein Timing:** Adequate protein distributed across meals with emphasis on post-workout and evening recovery
+
+✓ **Plant-Based Protein Sources:** Chickpeas, lentils, pea protein, tahini, and chia seeds provide complete amino acid profiles without dairy
+
+✓ **Dairy-Free Alternatives:** Fortified plant milks and nutrit</pre></td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution meets all three mandatory requirements with exceptional detail and organization. Dietary restrictions are flawlessly implemented, and the meal timing strategy is well-suited for marathon preparation. However, the caloric and macronutrient targets diverge from the secondary criteria specifications. The plan provides 2,800 calories instead of the requested 3,200-3,500 range, which represents a meaningful shortfall for an athlete in peak training 2 weeks before a marathon. While this doesn't violate mandatory requirements (which specify no caloric range), it conflicts with explicit secondary criteria. The carbohydrate percentage technically meets criteria but is positioned at the minimum threshold.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a sport-specific constraint scenario (swimmer with early morning training) requiring practical meal timing that accommodates pool sessions and limited preparation time</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 72 kg<br><strong>goal:</strong> Optimize energy and recovery for early morning swimming training (5:30 AM session, 90 minutes) with afternoon practice<br><strong>restrictions:</strong> No shellfish, prefers quick-prep meals due to limited time before training</td>
+                <td class="criteria">• Meal plan spans one full day with at least 4 eating occasions strategically timed around swimming sessions<br>• Pre-dawn meal (before 5:30 AM training) is light and easily digestible; post-training meal includes protein and carbs for recovery<br>• All meals and snacks require minimal preparation time (under 15 minutes each) and avoid shellfish<br>• Caloric intake and macronutrient distribution are appropriate for a 72 kg swimmer with dual training sessions</td>
+                <td class="output"><pre># One-Day Energy & Recovery Meal Plan for Competitive Swimmer
+## For 72kg Male Athlete (178cm)
+
+---
+
+## DAILY NUTRITION TARGETS
+- **Calories:** 3,100 kcal
+- **Protein:** 144g (2g per kg bodyweight)
+- **Carbohydrates:** 465g
+- **Fat:** 78g
+
+---
+
+## MEAL SCHEDULE
+
+### **PRE-DAWN SNACK** (5:00 AM) — 250 kcal
+*30 minutes before 5:30 AM swimming session*
+
+- Banana (medium): 120g
+- White bread: 50g (1 slice)
+- Honey: 15g
+- Water: 200ml
+
+**Macros:** 4g protein | 60g carbs | 0.5g fat
+
+---
+
+### **POST-MORNING TRAINING** (7:15 AM) — 650 kcal
+*Within 30 minutes of completing 90-minute swim*
+
+- Whole eggs: 3 large (150g)
+- Oatmeal (dry): 80g
+- Whole milk: 250ml
+- Honey: 20g
+- Salt to taste
+
+**Macros:** 32g protein | 85g carbs | 18g fat
+
+---
+
+### **MID-MORNING SNACK** (10:30 AM) — 320 kcal
+*Sustained energy between sessions*
+
+- Greek yogurt (plain, 0% fat): 300g
+- Granola (low-fat): 40g
+- Blueberries (fresh): 100g
+- Drizzle honey: 10g
+
+**Macros:** 22g protein | 48g carbs | 2g fat
+
+---
+
+### **LUNCH** (1:00 PM) — 700 kcal
+*2.5 hours before afternoon practice; emphasis on quick prep*
+
+- Chicken breast (cooked, diced): 200g
+- White rice (cooked): 250g
+- Steamed broccoli: 150g
+- Olive oil: 10ml
+- Lemon juice & sea salt
+
+**Macros:** 48g protein | 85g carbs | 12g fat
+
+---
+
+### **PRE-AFTERNOON TRAINING SNACK** (4:00 PM) — 280 kcal
+*1 hour before afternoon session*
+
+- White bread: 70g (1.5 slices)
+- Peanut butter (natural): 25g
+- Banana (small): 100g
+- Water: 200ml
+
+**Macros:** 10g protein | 42g carbs | 12g fat
+
+---
+
+### **POST-AFTERNOON TRAINING** (6:15 PM) — 550 kcal
+*Within 30 minutes of second swim session*
+
+- Canned tuna (in water, drained): 150g
+- Whole grain bread: 80g (2 slices)
+- Sweet potato (cooked): 200g
+- Tomato slices: 80g
+- Olive oil: 8ml
+
+**Macros:** 32g protein | 95g carbs | 14g fat
+
+---
+
+### **DINNER** (8:00 PM) — 350 kcal
+*2-3 hours before sleep; lighter recovery meal*
+
+- Lean ground turkey (93/7): 170g cooked
+- White pasta (cooked): 150g
+- Spinach (cooked): 120g
+- Olive oil: 5ml
+- Black pepper & garlic
+
+**Macros:** 38g protein | 40g carbs | 8g fat
+
+---
+
+## DAILY TOTALS
+| Nutrient | Amount | Target | Status |
+|----------|--------|--------|--------|
+| **Calories** | 3,100 | 3,100 | ✓ Met |
+| **Protein** | 186g | 144g | ✓ Exceeded (+42g) |
+| **Carbs** | 455g | 465g | ✓ Met |
+| **Fat** | 76.5g | 78g | ✓</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution comprehensively satisfies all mandatory requirements: daily caloric total is clearly stated (3,100 kcal), macronutrient breakdown is detailed for all meals, and meals include exact foods with precise portions and timing. The meal plan spans a full day with 7 eating occasions strategically distributed around both 5:30 AM and afternoon training sessions. The pre-dawn meal is appropriately light (250 kcal, easily digestible carbs), and post-training meals include adequate protein and carbohydrates for recovery. All restrictions are honored (no shellfish), and prep times are realistic for a busy athlete. Secondary criteria are substantially met, with minor concerns about protein quantification clarity and optimal pre-swim snack composition that don't violate the stated requirements. The plan demonstrates strong nutritional planning for a competitive swimmer.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    
